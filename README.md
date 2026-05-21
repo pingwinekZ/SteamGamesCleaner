@@ -10,36 +10,43 @@ Removes extra files from Steam game installations by comparing against depot man
 4. Shows you what would be deleted (dry-run)
 5. Asks for confirmation before removing anything
 
-## Requirements
+## Scripts
 
-- Python 3.8+
-- `steam` library
-- `vdf` library
+### Python (Linux/Windows)
 
-## Installation
+Requires Python 3.8+ with `steam` and `vdf` libraries.
 
 ```bash
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install steam vdf
-```
-
-## Usage
-
-```bash
 python steam_games_cleaner.py
 ```
 
-The script will:
-1. Auto-detect your Steam installation
-2. List all installed games
-3. Let you select which game to clean
-4. Parse local depot manifests for that game
-5. Show extra files and total size
-6. Ask for confirmation before deleting
+### PowerShell (Windows only)
+
+**No dependencies required.** Just run:
+
+```powershell
+.\steam_games_cleaner.ps1
+```
+
+If you get an execution policy error, run this first:
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
+
+## Features
+
+- **No Steam login required** - uses local manifests only
+- **Auto-detects** Steam installation and library folders
+- **Case-insensitive** file comparison (handles NTFS on Linux)
+- **Safety checks** - warns when depot manifests are missing and refuses to delete if none are found
+- **Dry-run first** - shows extra files and total size before asking for confirmation
+- **Cleans up** empty directories after deletion
 
 ## Notes
 
-- No Steam login required - uses local manifests only
-- If depot manifests are missing (game hasn't been updated recently), the script will warn you
-- Mod files not in manifests will be flagged as extra - move them elsewhere first
+- Depot manifests are cached by Steam only for recently accessed/updated games. If a game hasn't been updated in a while, its manifests may be missing. Try updating the game first.
+- Mod files, Creation Club content, or other user-added files not in manifests will be flagged as extra. Move them to a backup location before running the script.
+- The script only removes files, never directories with content.
