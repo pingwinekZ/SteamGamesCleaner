@@ -23,19 +23,6 @@ pip install steam vdf
 python steam_games_cleaner.py
 ```
 
-### PowerShell (Windows only)
-
-**No dependencies required.** Just run:
-
-```powershell
-.\steam_games_cleaner.ps1
-```
-
-If you get an execution policy error, run this first:
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
 ## Features
 
 - **No Steam login required** - uses local manifests only
