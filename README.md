@@ -42,4 +42,4 @@ The script will:
 
 - No Steam login required - uses local manifests only
 - If depot manifests are missing (game hasn't been updated recently), the script will warn you
-- Creation Club or other mod files not in manifests will be flagged as extra - move them elsewhere first
+- Mod files not in manifests will be flagged as extra - move them elsewhere first
