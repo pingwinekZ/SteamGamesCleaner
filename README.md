@@ -34,6 +34,6 @@ python steam_games_cleaner.py
 
 ## Notes
 
-- Depot manifests are cached by Steam only for recently accessed/updated games. If a game hasn't been updated in a while, its manifests may be missing. Try updating the game first.
+- Depot manifests are cached by Steam only for recently accessed/updated games. If a game hasn't been updated in a while, its manifests may be missing. Try updating/ verifying the game files in Steam first.
 - Mod files or other user-added files not in manifests will be flagged as extra. Move them to a backup location before running the script.
 - The script only removes files, never directories with content.
