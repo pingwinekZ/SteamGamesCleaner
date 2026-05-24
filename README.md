@@ -18,7 +18,7 @@ Requires Python 3.8+ with `steam` and `vdf` libraries.
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate.fish  # On Windows: venv\Scripts\activate
 pip install steam vdf
 python steam_games_cleaner.py
 ```
